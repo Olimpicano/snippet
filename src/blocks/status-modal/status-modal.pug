@@ -1,0 +1,26 @@
+//- Все примеси в этом файле должны начинаться c имени блока (status-modal)
+
+mixin status-modal(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +status-modal('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' status-modal--' + modsList[i].trim();
+      }
+    }
+
+  .status-modal__holder(class=allMods)&attributes(attributes)
+      .status-modal
+        +check_mark()
+        +x_mark()
+        p.status-modal__text
+        a(href='#' id='modal-close').btn.status-modal__btn Закрыть

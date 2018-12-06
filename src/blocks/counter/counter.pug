@@ -1,0 +1,29 @@
+//- Все примеси в этом файле должны начинаться c имени блока (counter)
+
+mixin counter(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +counter('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' counter--' + modsList[i].trim();
+      }
+    }
+
+  .counter(class=allMods)&attributes(attributes)
+    button.counter__down -
+    input(type="text").counter__input
+    button.counter__up +
+    
+    button(type="submit").counter__submit Заказать
+    
+    mixin counterAllBtn()
+      button(type="submit").counter__all Заказать все

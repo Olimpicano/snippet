@@ -1,0 +1,22 @@
+//- Все примеси в этом файле должны начинаться c имени блока (validation)
+
+mixin validation(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +validation('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' validation--' + modsList[i].trim();
+      }
+    }
+
+  .validation(class=allMods)&attributes(attributes)
+    .validation__inner!= text

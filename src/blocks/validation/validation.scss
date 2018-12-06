@@ -1,0 +1,21 @@
+// В этом файле должны быть стили для БЭМ-блока validation, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.validation {
+
+  $block-name:                &; // #{$block-name}__element
+}
+/**
+ * Form Validation Errors
+ */
+.error {
+	border-color: red;
+}
+
+.error-message {
+ color: red;
+    font-style: italic;
+    margin-bottom: 1em;
+  
+}

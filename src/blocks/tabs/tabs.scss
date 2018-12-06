@@ -1,0 +1,52 @@
+// В этом файле должны быть стили для БЭМ-блока tabs, его элементов, 
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+$control-link-border: 1px solid green !default;
+$control-link-hover-transition: all .5s ease !default;
+$control-link-hover-bg: aqua !default;
+$control-link-active-bg: aquamarine !default;
+$item-list-border: 1px dashed black !default;
+
+.tabs {
+  width: 600px;
+
+  &__control {
+    display: flex;
+  }
+  
+  &__control-item {
+    display: flex;
+  }
+  
+  &__control-link {
+    padding: 15px;
+    margin: 5px;
+    border: $control-link-border; 
+    text-decoration: none;
+  }
+  
+  &__control-link:hover {
+
+    cursor: pointer;
+    background-color: $control-link-hover-bg;
+    transition: $control-link-hover-transition;
+  }
+    
+  &__control-link.active {
+    background-color: $control-link-active-bg; 
+  }
+    
+  &__list {
+    list-style-type: none;
+    border: $item-list-border;
+  }
+    
+  &__item {
+    display: none;
+  }
+    
+  &__item.active {
+    display: block;
+  }
+}

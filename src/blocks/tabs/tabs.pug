@@ -1,0 +1,57 @@
+mixin tabs(props)
+
+  //- Принимает:
+  //-   props        {array}
+  //-     {object}
+  //-       text     {string} - текст на вкладке
+  //-       isActive {bool}   - флаг «это активная»
+  //- Вызов:
+        +tabs([
+          {
+            'id': 'tab00',
+            'text': 'Вкладка ноль',
+            'isActive': true,
+          },
+          {
+            'id': 'tab01',
+            'text': 'Вкладка один',
+          },
+          ])
+          +tabs-item(true)
+            p Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты.0
+          +tabs-item()
+            p За словесными горами в стране, гласных и согласных живут рыбные тексты.1
+  -
+
+  .tabs(class=allMods)&attributes(attributes)
+    ul.tabs__control()
+      each tab in props
+        
+        - var isActive = (typeof(tab.isActive) !== 'undefined' && tab.isActive) ? 'active' : '';
+        
+        li.tabs__control-item()
+          a.tabs__control-link(href='#', class=isActive)= tab.text
+    ul.tabs__list
+      block
+
+
+mixin tabs-item(isActive)
+
+  //- Принимает:
+  //-   isActive {bool}   - флаг «это активная»
+  //-   mods     {string} - список модификаторов
+  //- Вызов:
+        +tabs-item(true)
+          p Вкладка
+        +tabs-item()
+          p Вкладка
+        +tabs-item()
+          p Вкладка
+  -
+
+  - var isActive = (typeof(isActive) !== 'undefined' && isActive) ? 'active' : '';
+
+  li.tabs__item(class=isActive)&attributes(attributes)
+    block
+
+

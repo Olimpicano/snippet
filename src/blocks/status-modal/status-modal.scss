@@ -1,0 +1,66 @@
+// В этом файле должны быть стили для БЭМ-блока status-modal, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.status-modal {
+
+  $block-name:                &; // #{$block-name}__element
+  
+    position: fixed;
+  width: 17.5rem;
+  top: -100%;
+  left: 50%;
+  opacity: 0;
+  margin-left: -8.75rem;
+  margin-top: -3.5rem;
+  background-color: $white;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 1rem;
+  transition: opacity .8s ease;
+  
+  &--open{
+    opacity: 1;
+    top: 25%;    
+  }
+  
+  &__holder {
+    max-width: 0;
+    position: fixed;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 100;
+    transition: opacity .5s ease;
+    
+    &--open{
+      max-width: 100%;
+      opacity: 1;
+    }
+    
+  }
+  
+  &__text {
+  //  margin-top: -18px;
+    margin-bottom: 1rem;
+    z-index: 100;
+  }
+  
+  &__btn {
+    background-color: $color-main;
+    color: $white;
+        width: 50%;
+    padding: rem(15px) 0;
+//    background-color: $callback-form-btn-bg;
+    border: none;
+    border-radius: rem(5px);
+    
+    &:hover {
+//      background-color: $callback-form-btn-bg-hover;
+    }
+  }
+}

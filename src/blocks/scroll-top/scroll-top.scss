@@ -1,0 +1,43 @@
+// В этом файле должны быть стили для БЭМ-блока scroll-top, его элементов, 
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.scroll-top {
+
+  $block-name:                &; // #{$block-name}__element
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+ // transform: scale(0);
+  
+  &.none-visible{
+    transform: scale(0);
+    animation: scroll-none-visible .6s ease forwards;
+  //  opacity: 0;
+  }
+  
+  &.is-visible{
+    transform: scale(1);
+  //  opacity: 1;
+    animation: scroll-visible .6s ease forwards;
+  }
+}
+
+@keyframes scroll-none-visible{
+  0%{
+    transform: scale(1);
+  }
+  100%{
+    transform: scale(0);
+  }
+}
+
+@keyframes scroll-visible{
+  0%{
+    transform: scale(0);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+

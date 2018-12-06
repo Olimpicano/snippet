@@ -1,0 +1,32 @@
+// Этот блок ответственен ТОЛЬКО за типографику проекта.
+// Не пишите тут какую-либо стороннюю стилизацию.
+
+// @font-face {
+//   font-family: 'FONTNAME';
+//   src: url('../fonts/FONTNAME.woff2') format('woff2'),
+//        url('../fonts/FONTNAME.woff') format('woff'),
+//        url('../fonts/FONTNAME.ttf')  format('truetype');
+//   font-weight: 400;
+//   font-style: normal;
+// }
+
+html {
+
+  // Для адаптивной типографики, менять font-size на html
+  // @media (min-width: $screen-md) {
+  //   font-size: ($font-size-base + 2);
+  // }
+}
+
+
+code {
+  padding: 0.06em 0.3em;
+  background-color: rgba(#000, 0.08);
+}
+
+pre {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  tab-size: 2;
+}

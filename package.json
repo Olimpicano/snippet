@@ -1,0 +1,98 @@
+{
+  "name": "NTH-start-project",
+  "version": "3.1.0",
+  "description": "Startkit for HTML/CSS/JS pages layout.",
+  "author": "Nikolay Gromov",
+  "license": "WTFPL",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nicothin/NTH-start-project.git"
+  },
+  "babel": {
+    "presets": [
+      "@babel/env"
+    ],
+    "ignore": [
+      "./src/blocks/validation"
+    ]
+  },
+  "scripts": {
+    "test:style": "stylelint \"src/**/*.scss\" --syntax=scss",
+    "test:editorconfig": "editorconfig-cli src/**/*.{js,pug}",
+    "test": "npm run test:style && npm run test:editorconfig && npm run build",
+    "start": "gulp",
+    "deploy": "cross-env NODE_ENV=production ./node_modules/.bin/gulp build && cross-env ./node_modules/.bin/gulp deploy",
+    "build": "cross-env NODE_ENV=production npm start build",
+    "img-opt": "cross-env folder=src/img npm start img:opt",
+    "lint-staged": "lint-staged",
+    "precommit": "lint-staged && gulp test:pug"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ],
+  "lint-staged": {
+    "*.js": "editorconfig-cli",
+    "*.pug": "editorconfig-cli",
+    "*.css": "stylelint",
+    "*.scss": "stylelint --syntax=scss"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.0",
+    "@babel/core": "^7.2.0",
+    "@babel/preset-env": "^7.2.0",
+    "@babel/preset-es2015": "^7.0.0-beta.53",
+    "@htmlacademy/editorconfig-cli": "^1.0.0",
+    "autoprefixer": "^8.0.0",
+    "browser-sync": "^2.18.8",
+    "const": "^1.0.0",
+    "cross-env": "^5.0.0",
+    "css-mqpacker": "^6.0.0",
+    "del": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-cheerio": "^0.6.2",
+    "gulp-cleancss": "^0.2.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-debug": "^4.0.0",
+    "gulp-gh-pages": "git+https://github.com/nicothin/gulp-gh-pages.git",
+    "gulp-html-beautify": "^1.0.1",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^4.0.0",
+    "gulp-insert": "^0.5.0",
+    "gulp-newer": "^1.3.0",
+    "gulp-notify": "^3.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-postcss": "^7.0.0",
+    "gulp-pug": "^4.0.1",
+    "gulp-pug-lint": "git+https://github.com/nicothin/gulp-pug-lint.git",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^1.0.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-size": "^3.0.0",
+    "gulp-sourcemaps": "^2.4.1",
+    "gulp-svgmin": "^1.2.3",
+    "gulp-svgstore": "^6.1.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-wait": "0.0.2",
+    "gulp.spritesmith": "^6.3.0",
+    "jstransformer-markdown-it": "^2.0.0",
+    "lint-staged": "^7.0.0",
+    "merge-stream": "^1.0.1",
+    "mkdirp": "^0.5.1",
+    "postcss-import": "^11.0.0",
+    "postcss-inline-svg": "^3.0.0",
+    "postcss-object-fit-images": "^1.1.2",
+    "stylelint": "^9.1.1",
+    "vinyl-buffer": "^1.0.0"
+  },
+  "dependencies": {
+    "bootstrap": "^4.1.3",
+    "bootstrap.native": "^2.0.24",
+    "gulp-babel": "^8.0.0",
+    "ismobilejs": "^0.4.0",
+    "jquery": "^3.1.1",
+    "jquery-migrate": "^3.0.0",
+    "object-fit-images": "^3.2.3",
+    "svg4everybody": "^2.1.8"
+  }
+}

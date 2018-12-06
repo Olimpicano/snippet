@@ -1,0 +1,12 @@
+//- Все примеси в этом файле должны начинаться c имени блока (tel-mask)
+
+mixin tel-mask(placeholder)
+
+  //- Принимает:
+  //-   placeholder    {string} - принимает плейсхолдер
+  //- Вызов:
+        +tel-mask('Текст', 'some-mod')
+
+  -
+
+  input(class='form__phone' type='tel' placeholder=placeholder)

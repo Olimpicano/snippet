@@ -1,0 +1,15 @@
+//- Все примеси в этом файле должны начинаться c имени блока (slideshow)
+
+mixin slideshow(text, mods)
+
+
+  .slideshow(class=allMods)&attributes(attributes)
+    .slideshow__display
+      img
+    ul.slideshow__list
+      block
+      
+mixin slideshow-element(src)
+      li.slideshow__item
+        a(href="#").slideshow__link
+          img(src=src).slideshow__image

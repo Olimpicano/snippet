@@ -1,0 +1,17 @@
+//- Все примеси в этом файле должны начинаться c имени блока (accordion)
+
+mixin accordion()
+
+  //-  основная обертка
+
+  .accordion()
+    ul.accordion__list
+      block
+      
+  //- елемент списка, принимает текст для ссылки
+  
+mixin accordion-item(text)
+    li.accordion__item
+      a.accordion__trigger(href="#")= text
+      .accordion__inner
+        block

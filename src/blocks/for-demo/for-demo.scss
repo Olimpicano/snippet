@@ -1,0 +1,8 @@
+// В этом файле должны быть стили для БЭМ-блока for-demo, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.for-demo {
+
+  $block-name:                &; // #{$block-name}__element
+}

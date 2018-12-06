@@ -1,0 +1,35 @@
+// В этом файле должны быть стили для БЭМ-блока scroll-indicator, его элементов, 
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+$scroller-height: 6px;
+$scroller-color: #c69;
+$scroller-background: #ddd;
+$body-background: white;
+
+.scroll-indicator {
+    position: fixed;
+    top: 0;
+    height: 0;
+    width: 100%;
+    background: $body-background;
+}
+
+.whith-indicator {  
+    background: linear-gradient(to right top, 
+      $scroller-color 50%, 
+      $scroller-background 50%);
+    //6px = height of scroller but calc won't work with variables
+  background-size: 100% calc(100% - 100vh +  #{-$scroller-height}); 
+    background-repeat: no-repeat;
+}
+
+.whith-indicator:before {
+    content:'';
+    position: fixed;
+    top: $scroller-height;
+    bottom: 0;
+    width: 100%;
+    z-index: -1;
+    background: $body-background;
+}

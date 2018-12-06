@@ -1,0 +1,60 @@
+// В этом файле должны быть стили для БЭМ-блока accordion, его элементов, 
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+
+// trigger link
+$accordion-animation: all .3s linear !default;
+$accordion-color-trigger: #333 !default;
+$accordion-bg-trigger: #f5f5f5 !default;
+$accordion-border-trigger: 1px solid #ddd !default;
+
+.accordion {
+
+  $block-name:                &; // #{$block-name}__element
+  
+  width: 100%;
+  max-width: 800px;
+
+  
+  &__list {
+    list-style-type: none;
+  }
+  
+  &__trigger {
+    text-decoration: none;
+    color: $accordion-color-trigger;
+    background-color: $accordion-bg-trigger;
+    display: block;
+    padding: 6px;
+    border: $accordion-border-trigger;
+  }
+  
+  &__inner {
+    margin-left: 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: $accordion-animation;
+  }
+  
+  &__inner--active {
+    max-height: 200px;
+    overflow: hidden;
+
+  }
+  
+  &__item {
+    margin-bottom: 10px;
+  }
+  
+  &__inner-link {
+    text-decoration: none;
+    color: #34495e;
+    border: 1px dotted #34495e;
+  }
+  
+  &__inner-item {
+    list-style: disc;
+    margin-bottom: 2px;
+  }
+}

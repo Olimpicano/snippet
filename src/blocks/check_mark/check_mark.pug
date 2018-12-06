@@ -1,0 +1,54 @@
+//- Все примеси в этом файле должны начинаться c имени блока (check_mark)
+
+mixin check_mark(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +check_mark('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' check_mark--' + modsList[i].trim();
+      }
+    }
+
+  .check_mark.hide(class=allMods)&attributes(attributes)
+    .sa-icon.sa-success.animate
+      span.sa-line.sa-tip.animateSuccessTip
+      span.sa-line.sa-long.animateSuccessLong
+      .sa-placeholder
+      .sa-fix
+
+
+mixin x_mark(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +check_mark('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' check_mark--' + modsList[i].trim();
+      }
+    }
+
+  .f-modal-alert.hide
+    .f-modal-icon.f-modal-error.animate(class=allMods)&attributes(attributes)
+      span.f-modal-x-mark
+        span.f-modal-line.f-modal-left.animateXLeft
+        span.f-modal-line.f-modal-right.animateXRight
+      .f-modal-placeholder
+      .f-modal-fix
+
