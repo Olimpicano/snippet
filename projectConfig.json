@@ -23,7 +23,8 @@
     "status-modal": [],
     "check_mark": [],
     "for-demo": [],
-    "validation": []
+    "validation": [],
+    "search-bar": []
   },
   "addCssBefore": [
     "./src/scss/functions.scss",

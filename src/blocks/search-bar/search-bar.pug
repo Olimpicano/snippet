@@ -1,0 +1,23 @@
+//- Все примеси в этом файле должны начинаться c имени блока (search-bar)
+
+mixin search-bar(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +search-bar('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' search-bar--' + modsList[i].trim();
+      }
+    }
+
+  .search-bar(class=allMods)&attributes(attributes)
+    input(type='text' placeholder='Поиск...')
+    .search__btn

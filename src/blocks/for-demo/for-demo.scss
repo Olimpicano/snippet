@@ -6,3 +6,11 @@
 
   $block-name:                &; // #{$block-name}__element
 }
+
+.search-block{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  min-height: 100px;
+}

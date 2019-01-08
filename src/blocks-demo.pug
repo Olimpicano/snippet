@@ -208,6 +208,10 @@ block content
         button(type="submit" class="button") Submit
     +block-lib-code()
       include:markdown-it(html='true') blocks/validation/readme.md
+      
+  +block-lib('Search-bar','Строка поиска', false)
+    .search-block
+      +search-bar()
 
   .burger.blocks-library__menu-toggler(data-toggle='off-canvas')
     span(data-toggle='off-canvas')
